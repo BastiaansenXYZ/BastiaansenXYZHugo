@@ -1,25 +1,15 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hugo Authors"
+description = "Bastiaansen XYZ, a page by and IT-enthousiast. Find tech-related blogpost en howto's here!"
+date = "2021-02-17"
+aliases = ["about-us", "contact"]
+author = "Sander Bastiaansen"
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Welcome to Bastiaansen.XYZ a website created by a tech-enthousiast and IT-consultant. My name is Sander Bastiaansen and I wish to record all my findings and learnings on this website. I`m mostly working on Microsoft Azure, DevOps, Cloud services and in my spare time Domotica.
 
-Hugo makes use of a variety of open source projects including:
+Being an IT-Consultant for over 10 years now I`m pretty experienced in on-prem IT-architecture. I`ve worked with VMware, Micrsoft Server and Citrix platforms all alike. Lately my focus, and that of the entire IT sector, has shifted towards cloud-services. I`ve been training and following everything Microsoft Azure related. Mostly towards IaaS and PaaS services.
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+This website is built on Hugo. Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows. Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+If you`d wish to contact me, just use one of the social links provided on this website.
