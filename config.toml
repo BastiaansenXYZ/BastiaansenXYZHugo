@@ -1,7 +1,7 @@
-baseURL = "https://example.com"
+baseURL = "https://bastiaansen.xyz"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Website of Jane Doe"
+title = "Website of Sander Bastiaansen"
 theme = "anatole"
 summarylength = 10
 enableEmoji = true
@@ -19,10 +19,10 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [params]
-title = "I'm Jane Doe"
-author = "Jane Doe"
+title = "I'm Sander Bastiaansen"
+author = "Sander Bastiaansen"
 #copyright = "2020-2021"
-description = "Call me Jane"
+description = "Call me Sander"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
