@@ -1,17 +1,11 @@
 baseURL = "https://bastiaansen.xyz"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Website of Sander Bastiaansen"
+title = "Bastiaansen.XYZ"
 theme = "anatole"
 summarylength = 10
-enableEmoji = true
+enableEmoji = false
 enableRobotsTXT = true
-
-# Enable Disqus
-#disqusShortname = ""
-
-# Google Analytics
-#googleAnalytics = "UA-123-45"
 
 # Syntax highlighting
 pygmentsUseClasses = true
@@ -19,10 +13,10 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [params]
-title = "I'm Sander Bastiaansen"
+title = "Bastiaansen.XYZ"
 author = "Sander Bastiaansen"
 #copyright = "2020-2021"
-description = "Call me Sander"
+description = "Hi I`m Sander, and this website is dedicated to domotica, cloud and all tech-related subjects!"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
@@ -33,17 +27,11 @@ customJs = []
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
-# Form Spree Contact Form
-#contactFormAction = "https://formspree.io/f/your-form-hash-here"
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 # indexDateFormat = "Mon, Jan 2, 2006"
 # listDateFormat = "Jan 2"
 # singleDateFormat = "Mon, Jan 2, 2006"
-
-[params.simpleAnalytics]
-# enable = true
-# customurl = "https://analytics.example.com"
 
 ## Math settings
 [params.math]
@@ -63,14 +51,9 @@ title = "GitHub"
 url = "https://github.com/lxndrblz/anatole/"
 
 [[params.socialIcons]]
-icon = "fab fa-instagram"
-title = "instagram"
-url = "https://www.instagram.com/"
-
-[[params.socialIcons]]
 icon = "fas fa-envelope"
 title = "e-mail"
-url = "mailto:mail@alexbilz.com"
+url = "mailto:sander@bastiaansen.xyz"
 
 ## Menu items
 
@@ -93,9 +76,3 @@ url = "mailto:mail@alexbilz.com"
   weight = 300
   identifier = "about"
   url = "/about/"
-
-  [[menu.main]]
-  name = "Contact"
-  weight = 400
-  identifier = "contact"
-  url = "/contact/"
