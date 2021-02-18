@@ -28,7 +28,7 @@ mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
 # Google Site Verify
-#googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+googleSiteVerify = "255baq2By7QNUN-jE2zn7LbRLICJdyitRfOMcAdZSdw"
 # indexDateFormat = "Mon, Jan 2, 2006"
 # listDateFormat = "Jan 2"
 # singleDateFormat = "Mon, Jan 2, 2006"
