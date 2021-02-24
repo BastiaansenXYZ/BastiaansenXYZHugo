@@ -1,26 +1,74 @@
-# Release notes for release $(Build.DefinitionName)
-**Release Number**  : $($release.name)
-**Release completed** $("{0:dd/MM/yy HH:mm:ss}" -f [datetime]$release.modifiedOn)
+## Build {{buildDetails.buildNumber}}
+* **Branch**: {{buildDetails.sourceBranch}}
+* **Tags**: {{buildDetails.tags}}
+* **Completed**: {{buildDetails.finishTime}}
+* **Previous Build**: {{compareBuildDetails.buildNumber}}
 
-**Changes since last successful release to '$stagename'**
-**Including releases:**    $(($releases | select-object -ExpandProperty name) -join ", " )
+## Associated Pull Requests ({{pullRequests.length}})
+{{#forEach pullRequests}}
+* **[{{this.pullRequestId}}]({{replace (replace this.url "_apis/git/repositories" "_git") "pullRequests" "pullRequest"}})** {{this.title}}
+* Associated Work Items
+{{#forEach this.associatedWorkitems}}
+   {{#with (lookup_a_work_item ../../relatedWorkItems this.url)}}
+    - [{{this.id}}]({{replace this.url "_apis/wit/workItems" "_workitems/edit"}}) - {{lookup this.fields 'System.Title'}} 
+   {{/with}}
+{{/forEach}}
+* Associated Commits (this includes commits on the PR source branch not associated directly with the build)
+{{#forEach this.associatedCommits}}
+    - [{{this.commitId}}]({{this.remoteUrl}}) -  {{this.comment}}
+{{/forEach}}
+{{/forEach}}
 
-## Builds
-@@BUILDLOOP@@
-###$($build.definition.name)
-# Release notes for build $defname
-**Build Number**  : $($build.buildnumber)
-**Build started** : $("{0:dd/MM/yy HH:mm:ss}" -f [datetime]$build.startTime)
-**Source Branch** : $($build.sourceBranch)
-###Associated work items
-@@WILOOP@@
-* **$($widetail.fields.'System.WorkItemType') $($widetail.id)** [Assigned by: $($widetail.fields.'System.AssignedTo')]     $($widetail.fields.'System.Title')
-@@WILOOP@@
-### Associated change sets/commits
-@@CSLOOP@@
-* **ID $($csdetail.changesetid)$($csdetail.commitid)** $($csdetail.comment)
-@@CSLOOP@@
+# Global list of WI with PRs, parents and children
+{{#forEach this.workItems}}
+{{#if isFirst}}### WorkItems {{/if}}
+*  **{{this.id}}**  {{lookup this.fields 'System.Title'}}
+   - **WIT** {{lookup this.fields 'System.WorkItemType'}} 
+   - **Tags** {{lookup this.fields 'System.Tags'}}
+   - **Assigned** {{#with (lookup this.fields 'System.AssignedTo')}} {{displayName}} {{/with}}
+   - **Description** {{{lookup this.fields 'System.Description'}}}
+   - **PRs**
+{{#forEach this.relations}}
+{{#if (contains this.attributes.name 'Pull Request')}}
+{{#with (lookup_a_pullrequest ../../pullRequests  this.url)}}
+      - {{this.pullRequestId}} - {{this.title}} 
+{{/with}}
+{{/if}}
+{{/forEach}} 
+   - **Parents**
+{{#forEach this.relations}}
+{{#if (contains this.attributes.name 'Parent')}}
+{{#with (lookup_a_work_item ../../relatedWorkItems  this.url)}}
+      - {{this.id}} - {{lookup this.fields 'System.Title'}} 
+      {{#forEach this.relations}}
+      {{#if (contains this.attributes.name 'Parent')}}
+      {{#with (lookup_a_work_item ../../../../relatedWorkItems  this.url)}}
+         - {{this.id}} - {{lookup this.fields 'System.Title'}} 
+      {{/with}}
+      {{/if}}
+      {{/forEach}} 
+{{/with}}
+{{/if}}
+{{/forEach}} 
+   - **Children**
+{{#forEach this.relations}}
+{{#if (contains this.attributes.name 'Child')}}
+{{#with (lookup_a_work_item ../../relatedWorkItems  this.url)}}
+      - {{this.id}} - {{lookup this.fields 'System.Title'}} 
+{{/with}}
+{{/if}}
+{{/forEach}} 
+{{/forEach}}
 
-----------
-
-@@BUILDLOOP@@
+# Global list of CS ({{commits.length}})
+{{#forEach commits}}
+{{#if isFirst}}### Associated commits{{/if}}
+* ** ID{{this.id}}** 
+   -  **Message:** {{this.message}}
+   -  **Commited by:** {{this.author.displayName}} 
+   -  **FileCount:** {{this.changes.length}} 
+{{#forEach this.changes}}
+      -  **File path (TFVC or TfsGit):** {{this.item.path}}  
+      -  **File filename (GitHub):** {{this.filename}}  
+{{/forEach}}
+{{/forEach}}
