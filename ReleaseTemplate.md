@@ -1,3 +1,9 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+---
+
 # Notes for release  {{releaseDetails.releaseDefinition.name}}    
 **Release Number**  : {{releaseDetails.name}}
 **Release completed** : {{releaseDetails.modifiedOn}}     
