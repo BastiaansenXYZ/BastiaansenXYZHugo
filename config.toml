@@ -4,7 +4,7 @@ DefaultContentLanguage = "en"
 title = "Bastiaansen.XYZ"
 theme = "anatole"
 summarylength = 10
-enableEmoji = true
+enableEmoji = false
 enableRobotsTXT = true
 
 # Syntax highlighting
