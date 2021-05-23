@@ -13,3 +13,7 @@ Being an IT-Consultant for over 10 years now I am pretty experienced in on-prem 
 This website is built on Hugo. Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows. Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
 
 If you`d wish to contact me, just use one of the social links provided on this website.
+
+Website CI/CD Status
+
+[![Azure Static Web Apps CI/CD](https://github.com/BastiaansenXYZ/BastiaansenXYZHugo/actions/workflows/azure-static-web-apps-kind-mushroom-033c11b03.yml/badge.svg?branch=main)](https://github.com/BastiaansenXYZ/BastiaansenXYZHugo/actions/workflows/azure-static-web-apps-kind-mushroom-033c11b03.yml)
