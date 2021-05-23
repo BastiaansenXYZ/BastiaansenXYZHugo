@@ -20,12 +20,12 @@ In order to get the camera working you`ll need a few things. First, obviously, a
 ## Setting up
 Connect the camera to the app that comes with your camera. In my case the app was called "HIDVCAM". Just run through the set-up as the app suggests. Second in setting up, download the following [package](https://drive.google.com/file/d/1e2Gxs5iznQ5yBFzzHJAk5JadsrQYasY4/view) and install HRS-1.1.1_install.exe. This will install the application called HRS on your PC. Run it, and check if you can fetch the stream with the HRS application on your PC. Once set-up on your phone the camera will be visible in the network via WiFi and the application should automatically pick up on the camera.
 
-![HRS Application](../../static/images/HRS.png)
+![HRS Application](../../images/HRS.png)
 
 ## Sniffing the RTSP connectionstring from WireShark
 This part is the most tricky, hacky and exciting part of the process. You`ll be able to fetch the RTSP connectionstring from a TCP package in Wireshark. Open up WireShark and connect to a networkadapter that is running within the same network as the camera. This doesn't mean that you need WiFi. Connect with the Ethernet adapter that connects to that same network if you wish. Just double-click the proper adapter and you will see that data will start flowing in. Now use the following format to set up a filter so that you will only see data that is relevant to this issue *ip.src==192.168.1.100*. Replace the IP after the equal signs with the IP of the camera. You can find that IP in the app on your phone. After that the image you see should look a little like the image below.
 
-![Wireshark Capture](../../static/images/WireShark.png)
+![Wireshark Capture](../../images/WireShark.png)
 
 Now fire up the HRS application on your PC, and connect to the camera. Go back to WireShark and sort the Protocol column and scroll up and down till you find RTSP entries in the list. Find one where the Info column starts with *PLAY*. You should immediatly notice that there is a well human-readable RTSP connectionstring there. Rightclick the entry, go to copy, and copy the summary as text. And paste in the text-editor of your choice. From there you`ll be able to copy the RTSP connectionstring. It will look something like rtsp://IP_ADRESSS:554/LONGSTRINGOFNUMBERSANDOTHERCHARACTERS_0.
 
