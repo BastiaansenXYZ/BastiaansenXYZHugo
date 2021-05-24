@@ -1,2 +1,2 @@
-# BastiaansenXYZBlog
-Content of the BastiaansenXYZBlog site
+# BastiaansenXYZ
+Content of the BastiaansenXYZ Blog site
